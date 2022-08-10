@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
     lazy private var catLabel: UILabel = {
         let catLabel = UILabel()
@@ -29,12 +29,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.backgroundColor = .orange
         tableView.separatorColor = .black
         tableView.rowHeight = 170
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: catLabel.bottomAnchor, constant: 30),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: buttonAdd.topAnchor, constant: -5),
-        ])
         return tableView
     }()
     
@@ -63,7 +57,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             catLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             catLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1),
             
-           
+            tableView.topAnchor.constraint(equalTo: catLabel.bottomAnchor, constant: 30),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: buttonAdd.topAnchor, constant: -5),
 
             buttonAdd.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             buttonAdd.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -5),
@@ -71,6 +68,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         ])
     }
 
+}
+
+
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         10
     }
@@ -80,6 +82,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
-

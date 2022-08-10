@@ -13,6 +13,9 @@
 		B590504328A141D500F158AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B590504228A141D500F158AB /* Assets.xcassets */; };
 		B590504628A141D500F158AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B590504428A141D500F158AB /* LaunchScreen.storyboard */; };
 		B5AFAA7828A17D2C00F7ECA9 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AFAA7728A17D2C00F7ECA9 /* CustomTableViewCell.swift */; };
+		B5F6A88B28A3EA8C0035FD30 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A88A28A3EA8C0035FD30 /* MainTabBarViewController.swift */; };
+		B5F6A88D28A3EB490035FD30 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A88C28A3EB490035FD30 /* FavouriteViewController.swift */; };
+		B5F6A89128A3EF770035FD30 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F6A89028A3EF770035FD30 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		B590504528A141D500F158AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B590504728A141D500F158AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5AFAA7728A17D2C00F7ECA9 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		B5F6A88A28A3EA8C0035FD30 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		B5F6A88C28A3EB490035FD30 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		B5F6A89028A3EF770035FD30 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,34 @@
 		B590503828A141D400F158AB /* SomeUIKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				B590503928A141D400F158AB /* AppDelegate.swift */,
-				B590503B28A141D400F158AB /* SceneDelegate.swift */,
-				B590503D28A141D400F158AB /* ViewController.swift */,
+				B5F6A88F28A3EB670035FD30 /* App */,
+				B5F6A88E28A3EB510035FD30 /* Controllers */,
+				B5F6A88A28A3EA8C0035FD30 /* MainTabBarViewController.swift */,
 				B5AFAA7728A17D2C00F7ECA9 /* CustomTableViewCell.swift */,
 				B590504228A141D500F158AB /* Assets.xcassets */,
-				B590504428A141D500F158AB /* LaunchScreen.storyboard */,
 				B590504728A141D500F158AB /* Info.plist */,
 			);
 			path = SomeUIKitTests;
+			sourceTree = "<group>";
+		};
+		B5F6A88E28A3EB510035FD30 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B590503D28A141D400F158AB /* ViewController.swift */,
+				B5F6A89028A3EF770035FD30 /* DetailViewController.swift */,
+				B5F6A88C28A3EB490035FD30 /* FavouriteViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B5F6A88F28A3EB670035FD30 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B590503928A141D400F158AB /* AppDelegate.swift */,
+				B590503B28A141D400F158AB /* SceneDelegate.swift */,
+				B590504428A141D500F158AB /* LaunchScreen.storyboard */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,10 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F6A88B28A3EA8C0035FD30 /* MainTabBarViewController.swift in Sources */,
 				B590503E28A141D400F158AB /* ViewController.swift in Sources */,
 				B590503A28A141D400F158AB /* AppDelegate.swift in Sources */,
 				B5AFAA7828A17D2C00F7ECA9 /* CustomTableViewCell.swift in Sources */,
+				B5F6A88D28A3EB490035FD30 /* FavouriteViewController.swift in Sources */,
 				B590503C28A141D400F158AB /* SceneDelegate.swift in Sources */,
+				B5F6A89128A3EF770035FD30 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

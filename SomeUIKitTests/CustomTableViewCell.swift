@@ -16,7 +16,8 @@ class CustomTableViewCell: UITableViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "cat")
         image.clipsToBounds = true
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
+        image.layer.cornerRadius = 50
         return image
     }()
     
@@ -38,9 +39,7 @@ class CustomTableViewCell: UITableViewCell {
         contentView.backgroundColor = .orange
         contentView.addSubview(image)
         contentView.addSubview(label)
-        contentView.addSubview(uiView)
-        uiView.addSubview(image)
-        uiView.bringSubviewToFront(image)
+        
         
         NSLayoutConstraint.activate([
         
@@ -52,11 +51,7 @@ class CustomTableViewCell: UITableViewCell {
             label.trailingAnchor.constraint(equalTo: image.trailingAnchor, constant: 80),
             label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             
-            uiView.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 50),
-            uiView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor, constant: 50),
-            uiView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            uiView.heightAnchor.constraint(equalToConstant: 150),
-            uiView.widthAnchor.constraint(equalToConstant: 150),
+
         ])
     }
     
