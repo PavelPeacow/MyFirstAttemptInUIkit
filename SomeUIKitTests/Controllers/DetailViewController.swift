@@ -9,13 +9,13 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    lazy var catImage: UIImageView = {
-        catImage = UIImageView()
+    lazy var catImage: CustomUIImageView = {
+        catImage = CustomUIImageView()
         catImage.translatesAutoresizingMaskIntoConstraints = false
         catImage.image = UIImage(named: "cat")
         catImage.clipsToBounds = true
         catImage.contentMode = .scaleAspectFill
-        catImage.layer.cornerRadius = 50
+        catImage.layer.cornerRadius = 30
         return catImage
     }()
     
@@ -35,25 +35,28 @@ class DetailViewController: UIViewController {
 
         view.backgroundColor = .orange
         
-        
         view.addSubview(catImage)
         view.addSubview(catDescription)
         
         title = "An old cat"
         
+        setConstraints()
+        
+    }
+    
+    
+    
+    
+    func setConstraints() {
         NSLayoutConstraint.activate([
             catImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             catImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            catImage.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            catImage.heightAnchor.constraint(equalToConstant: 250),
+            catImage.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: 30),
+            catImage.heightAnchor.constraint(equalToConstant: 150),
             
             catDescription.topAnchor.constraint(equalTo: catImage.bottomAnchor, constant: 15),
             catDescription.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             catDescription.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
         ])
     }
-    
-
-
-
 }

@@ -11,24 +11,23 @@ class CustomTableViewCell: UITableViewCell {
 
     static let identifier = "cell"
     
-    lazy private var image: UIImageView = {
-       let image = UIImageView()
+    lazy var image: CustomUIImageView = {
+       let image = CustomUIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "cat")
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFill
-        image.layer.cornerRadius = 50
+        image.layer.cornerRadius = 5
         return image
     }()
     
-    lazy private var label: UILabel = {
+    lazy var label: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "An old cat"
+        label.textAlignment = .left
         return label
     }()
     
-    lazy private var uiView: UIView = {
+    lazy var uiView: UIView = {
         let uiView = UIView()
         uiView.backgroundColor = .red
         return uiView
@@ -43,13 +42,15 @@ class CustomTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
         
-            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            image.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
             image.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            image.heightAnchor.constraint(equalToConstant: 150),
-            image.widthAnchor.constraint(equalToConstant: 150),
+            image.heightAnchor.constraint(equalToConstant: 50),
+            image.widthAnchor.constraint(equalToConstant: 80),
+            image.trailingAnchor.constraint(equalTo: label.leadingAnchor, constant: -5),
             
-            label.trailingAnchor.constraint(equalTo: image.trailingAnchor, constant: 80),
             label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            label.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.4),
             
 
         ])
